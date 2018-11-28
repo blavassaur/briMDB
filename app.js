@@ -1,6 +1,8 @@
 var express = require("express");
 var app = express();
 var request = require("request");
+
+app.use(express.static("public"));
 app.set("view engine", "ejs");
 
 app.get("/", function (req, res) {
@@ -25,7 +27,6 @@ app.get("/details/:id", function (req, res) {
         if (!error && response.statusCode == 200) {
             var data = JSON.parse(body);
             res.render("details", {data: data});
-            console.log(body);
         }
     });
 });

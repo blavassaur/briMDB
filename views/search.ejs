@@ -1,4 +1,8 @@
-<form action="/results" method="GET">
-    <input type="search" name="search" placeholder="Search">
-    <input type="submit">
+<% include partials/header %>
+<div class="flex row justify-content-around align-items-center">
+<h1>BriMDB</h1>
+<form action="/results" method="GET" class="row">
+    <input type="search" name="search" placeholder="Search" class="form-control form-control-sm col-8" >
+    <input type="submit" class="btn btn-sm btn-primary col-4">
 </form>
+</div>

@@ -1,0 +1,19 @@
+* {
+}
+
+body {
+
+}
+
+form {
+    margin: 0;
+    padding: 0;
+}
+
+.img-fluid{
+    max-width: 75px;
+}
+
+.searchItem:nth-child(2n){
+    background-color: lightgrey;
+}
