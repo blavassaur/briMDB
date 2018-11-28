@@ -1,6 +1,12 @@
 <% include search %>
 
 <div class="container border">
+        <% if (data.Response === "False") { %>
+ 
+            <p><%= data.Error %> Please try refining your search term.</p>
+             
+            <% } else { %>
+    
     <% data["Search"].forEach(function(movie){ %>
     <div class="row align-items-center justify-content-between searchItem py-1">
         <div class="col-sm-2 d-none d-sm-block p-0">
@@ -17,6 +23,7 @@
         </div>
     </div>
     <% }) %>
+    <% } %>
 </div>
 
 
