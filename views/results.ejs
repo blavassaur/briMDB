@@ -9,7 +9,7 @@
         <div class="col-9 col-sm-8">
             <a href="/details/<%= movie['imdbID'] %>">
                 <%= movie["Title"] %></a>
-            <%= movie["Year"] %>
+                (<%= movie["Year"] %>)
         </div>
         <div class="col-3 col-sm-2">
             <form id="params" action="/details/<%= movie['imdbID'] %>" method="GET">

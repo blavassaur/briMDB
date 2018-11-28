@@ -1,7 +1,33 @@
-<% include partials/header %>
-<div>
-<img src= <%= data.Poster %>>
-<h1><%= data.Title %></h1>
+<% include search %>
+<div class="jumbotron-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <img src=<%=data.Poster %>>
+            </div>
+            <div class="col-8">
+                <div class="row">
+                <h2><%= data.Title %> (<%= data.Year %>)</h2>
+                Released:<%= data.Released %> Runtime:<%= data.Runtime %>
+                </div>
+                <div class="row">
+                    <%= data.imdbRating %>
+                    <%= data.Metascore %> 
+                    <%= data['Ratings'][1]['Value']%>  
+                </div>
+                <div class="row">
+                    <h3>Story</h3>
+                    <%= data.Plot %> 
+                </div>
+                <div class="row">
+                    <h3>Main Actors</h3>
+                    <p><%= data.Actors %></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
+
 
 <% include partials/footer %>
