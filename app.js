@@ -18,6 +18,18 @@ app.get("/results", function (req, res) {
     });
 });
 
+app.get("/details/:id", function (req, res) {
+    var query = req.params.id;
+    var url = "http://omdbapi.com/?i=" + query + "&apikey=thewdb"
+    request(url, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            var data = JSON.parse(body);
+            res.render("details", {data: data});
+            console.log(body);
+        }
+    });
+});
+
 app.listen(3000, function () {
     console.log("Movie DB app has started!");
 });
