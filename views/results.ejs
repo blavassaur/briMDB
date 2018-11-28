@@ -1,12 +1,13 @@
 <% include search %>
 
 <div class="container border">
-        <% if (data.Response === "False") { %>
- 
-            <p><%= data.Error %> Please try refining your search term.</p>
-             
-            <% } else { %>
-    
+    <% if (data.Response === "False") { %>
+
+    <p>
+        <%= data.Error %> Please try refining your search term.</p>
+
+    <% } else { %>
+
     <% data["Search"].forEach(function(movie){ %>
     <div class="row align-items-center justify-content-between searchItem py-1">
         <div class="col-sm-2 d-none d-sm-block p-0">
@@ -15,7 +16,8 @@
         <div class="col-9 col-sm-8">
             <a href="/details/<%= movie['imdbID'] %>">
                 <%= movie["Title"] %></a>
-                (<%= movie["Year"] %>)
+            (
+            <%= movie["Year"] %>)
         </div>
         <div class="col-3 col-sm-2">
             <form id="params" action="/details/<%= movie['imdbID'] %>" method="GET">
